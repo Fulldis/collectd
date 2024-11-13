@@ -2157,6 +2157,10 @@ target_scale_la_SOURCES = src/target_scale.c
 target_scale_la_LDFLAGS = $(PLUGIN_LDFLAGS)
 endif
 
+pkglib_LTLIBRARIES += target_test.la
+target_test_la_SOURCES = src/target_test.c
+target_test_la_LDFLAGS = $(PLUGIN_LDFLAGS)
+
 if BUILD_PLUGIN_TARGET_SET
 pkglib_LTLIBRARIES += target_set.la
 target_set_la_SOURCES = src/target_set.c
