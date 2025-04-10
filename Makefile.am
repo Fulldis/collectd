@@ -2157,6 +2157,13 @@ target_scale_la_SOURCES = src/target_scale.c
 target_scale_la_LDFLAGS = $(PLUGIN_LDFLAGS)
 endif
 
+if BUILD_PLUGIN_ONNX_TEST
+pkglib_LTLIBRARIES += onnx_test.la
+onnx_test_la_SOURCES = src/onnx_test.c src/onnx_model.c src/onnx_model.h src/onnx_config.c src/onnx_config.h
+onnx_test_la_LDFLAGS = $(PLUGIN_LDFLAGS)
+onnx_test_la_LIBADD = -lonnxruntime
+endif
+
 if BUILD_PLUGIN_TARGET_SET
 pkglib_LTLIBRARIES += target_set.la
 target_set_la_SOURCES = src/target_set.c
